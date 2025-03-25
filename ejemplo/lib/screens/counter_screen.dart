@@ -34,9 +34,7 @@ class _CounterScreenState extends State<CounterScreen> {
         child: Icon(Icons.add),
         onPressed: () {
           counter++;
-          setState(() {
-            
-          });
+          setState(() {});
         },
       ), 
     );
