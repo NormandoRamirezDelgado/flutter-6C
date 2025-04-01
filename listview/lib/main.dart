@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:listview/screens/listview2_screen.dart';
+import 'package:listview/router/app_routes.dart';
+import 'screens/screens.dart';
+
 
 void main() {
   runApp(const MainApp());
@@ -10,9 +12,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'ListView Tipo 1',
-      home: ListView2Screen()
+      // home: AlertScreen(),
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.routes,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }
