@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue[100],
+        //backgroundColor: Colors.indigo[100],
         title: Text('Home Screen')
       ),
       body: ListView.separated(
