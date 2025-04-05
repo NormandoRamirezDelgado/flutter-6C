@@ -36,7 +36,7 @@ class ListView2Screen extends StatelessWidget {
           title: Text(juegos[index]),
           trailing: Icon(Icons.arrow_forward_ios),
           onTap: () {
-            print(juegos[index]);
+            //print(juegos[index]);
           },
         ),
         separatorBuilder: (_, __) => Divider(), 
