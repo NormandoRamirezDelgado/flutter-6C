@@ -16,7 +16,6 @@ class AlertScreen extends StatelessWidget {
               Text('Este es el contenido de la Alerta'),
               SizedBox(height: 20,),
               FlutterLogo(size: 200,),
-              
             ],
           ),
           actions: [
