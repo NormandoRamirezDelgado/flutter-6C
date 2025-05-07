@@ -42,37 +42,61 @@ class _SideMenuState extends State<SideMenu> {
           padding: const EdgeInsets.fromLTRB(30, 20, 15, 10),
           child: Text('Main', style: TextStyle(fontWeight: FontWeight.bold),),
         ),
-        ExpansionTile(
-          title: Text('Parcial 1'),
-          children: [
-            ...AppRoutes.menuOptions
-            //Mostrar los 3 primeros elementos del listado
-            .sublist(0, 3)
-            .map( (item) => ListTile(
-              leading: Icon(item.icon),
-              title: Text(item.name),
-              onTap: () {
-                Navigator.pushNamed(context, item.route);
-              },
-            )),
-          ],
+
+        ...AppRoutes.menuOptions
+        //Mostrar los 3 primeros elementos del listado
+        .sublist(0, 3)
+        .map( (item) => NavigationDrawerDestination(
+          icon: Icon(item.icon),
+          label: Text(item.name)
+        )),
+
+        Divider(),
+
+        Padding(
+          padding: const EdgeInsets.fromLTRB(30, 20, 15, 10),
+          child: Text('More Options', style: TextStyle(fontWeight: FontWeight.bold),),
         ),
 
-        ExpansionTile(
-          title: Text('Parcial 2'),
-          children: [
-            ...AppRoutes.menuOptions
-            //Mostrar los 3 primeros elementos del listado
-            .sublist(3)
-            .map( (item) => ListTile(
-              leading: Icon(item.icon),
-              title: Text(item.name),
-              onTap: () {
-                Navigator.pushNamed(context, item.route);
-              },
-            )),
-          ]
-        ),
+        ...AppRoutes.menuOptions
+        //Mostrar los 3 primeros elementos del listado
+        .sublist(3)
+        .map( (item) => NavigationDrawerDestination(
+          icon: Icon(item.icon),
+          label: Text(item.name)
+        )),
+
+        // ExpansionTile(
+        //   title: Text('Parcial 1'),
+        //   children: [
+        //     ...AppRoutes.menuOptions
+        //     //Mostrar los 3 primeros elementos del listado
+        //     .sublist(0, 3)
+        //     .map( (item) => ListTile(
+        //       leading: Icon(item.icon),
+        //       title: Text(item.name),
+        //       onTap: () {
+        //         Navigator.pushNamed(context, item.route);
+        //       },
+        //     )),
+        //   ],
+        // ),
+
+        // ExpansionTile(
+        //   title: Text('Parcial 2'),
+        //   children: [
+        //     ...AppRoutes.menuOptions
+        //     //Mostrar los 3 primeros elementos del listado
+        //     .sublist(3)
+        //     .map( (item) => ListTile(
+        //       leading: Icon(item.icon),
+        //       title: Text(item.name),
+        //       onTap: () {
+        //         Navigator.pushNamed(context, item.route);
+        //       },
+        //     )),
+        //   ]
+        // ),
       ]
     );
   }
