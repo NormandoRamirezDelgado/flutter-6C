@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:listview/router/app_routes.dart';
+import 'package:listview/widgets/side_menu.dart';
 
 class HomeScreen extends StatelessWidget {
    
@@ -9,8 +10,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final menuOptions = AppRoutes.menuOptions;
+    final scaffoldKey = GlobalKey<ScaffoldState>();
 
     return Scaffold(
+      //Crear una referencia a Scaffold que tiene el drawer
+      key: scaffoldKey,
       appBar: AppBar(
         //backgroundColor: Colors.indigo[100],
         title: Text('Home Screen')
@@ -21,20 +25,12 @@ class HomeScreen extends StatelessWidget {
           leading: Icon(menuOptions[index].icon),
           title: Text(menuOptions[index].name),
           onTap: () {
-            //Navegación a otra pantalla
-            // final route = MaterialPageRoute(
-            //   builder: (context) => ListView1Screen()
-            // );
-
-            // Navigator.push(context, route);
-            // Navigator.pushReplacement(context, route);
-
             Navigator.pushNamed(context, menuOptions[index].route);
           },
         ), 
         separatorBuilder: (context, index) => Divider(), 
-        
       ),
+      drawer: SideMenu(scaffoldKey: scaffoldKey),
     );
   }
 }
